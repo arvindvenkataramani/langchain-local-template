@@ -1,24 +1,43 @@
 # config/models.yaml
-default_model: llama2
+default_model: llama3.2:latest
 
 models:
-  llama2:
+  mistral:latest:
     provider: ollama
-    model_name: llama2
+    model_name: mistral:latest
+    family: mistral
+    variant: null
     params:
+      context_length: 8192
       temperature: 0.7
       top_p: 0.9
-
-  mistral:
+      repeat_penalty: 1.1
+      top_k: 50
+      presence_penalty: 0
+      frequency_penalty: 0
+  gemma2:latest:
     provider: ollama
-    model_name: mistral
+    model_name: gemma2:latest
+    family: gemma
+    variant: null
     params:
-      temperature: 0.8
-      context_length: 4096
-
-  gpt4-local:
-    provider: lmstudio
-    model_name: gpt4
-    params:
+      context_length: 8192
       temperature: 0.7
-      max_tokens: 1000
+      top_p: 0.9
+      repeat_penalty: 1.1
+      top_k: 40
+      presence_penalty: 0
+      frequency_penalty: 0
+  llama3.2:latest:
+    provider: ollama
+    model_name: llama3.2:latest
+    family: llama
+    variant: null
+    params:
+      context_length: 4096
+      temperature: 0.7
+      top_p: 0.9
+      repeat_penalty: 1.1
+      top_k: 40
+      presence_penalty: 0
+      frequency_penalty: 0

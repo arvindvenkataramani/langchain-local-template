@@ -1,0 +1,86 @@
+default_model: mistral-nemo:latest
+models:
+  mistral-nemo:latest:
+    provider: ollama
+    model_name: mistral-nemo:latest
+    family: mistral
+    variant: null
+    params:
+      context_length: 8192
+      temperature: 0.7
+      top_p: 0.9
+      repeat_penalty: 1.1
+      top_k: 50
+      presence_penalty: 0
+      frequency_penalty: 0
+  mistral:latest:
+    provider: ollama
+    model_name: mistral:latest
+    family: mistral
+    variant: null
+    params:
+      context_length: 8192
+      temperature: 0.7
+      top_p: 0.9
+      repeat_penalty: 1.1
+      top_k: 50
+      presence_penalty: 0
+      frequency_penalty: 0
+  llava-llama3:latest:
+    provider: ollama
+    model_name: llava-llama3:latest
+    family: llama
+    variant: null
+    params:
+      context_length: 4096
+      temperature: 0.7
+      top_p: 0.9
+      repeat_penalty: 1.1
+      top_k: 40
+      presence_penalty: 0
+      frequency_penalty: 0
+  codellama:13b:
+    provider: ollama
+    model_name: codellama:13b
+    family: llama
+    variant: code
+    params:
+      context_length: 4096
+      temperature: 0.3
+      top_p: 0.95
+      repeat_penalty: 1.2
+      top_k: 40
+      presence_penalty: 0
+      frequency_penalty: 0
+      stop_sequences:
+      - '
+
+
+        '
+      - '```'
+  gemma2:latest:
+    provider: ollama
+    model_name: gemma2:latest
+    family: gemma
+    variant: null
+    params:
+      context_length: 8192
+      temperature: 0.7
+      top_p: 0.9
+      repeat_penalty: 1.1
+      top_k: 40
+      presence_penalty: 0
+      frequency_penalty: 0
+  llama3.2:latest:
+    provider: ollama
+    model_name: llama3.2:latest
+    family: llama
+    variant: null
+    params:
+      context_length: 4096
+      temperature: 0.7
+      top_p: 0.9
+      repeat_penalty: 1.1
+      top_k: 40
+      presence_penalty: 0
+      frequency_penalty: 0
