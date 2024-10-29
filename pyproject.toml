@@ -6,25 +6,27 @@ requires-python = ">=3.9"
 dependencies = [
     "langchain",
     "langchain-community",
+    "langchain-ollama",    # Added for Ollama support
     "python-dotenv",
     "pyyaml",
+    "requests",            # Added for model syncing script
 ]
 
 [project.optional-dependencies]
 dev = [
     # Code completion and intelligence
-    "pylance",          # Better Python language support
-    "python-lsp-server",# Language server for better code navigation
-    
+    "pylance",           # Better Python language support
+    "python-lsp-server", # Language server for better code navigation
+
     # Code quality
-    "black",            # Code formatting
-    "ruff",            # Fast linter (replacement for flake8, newer than pylint)
-    "mypy",            # Type checking
-    
+    "black", # Code formatting
+    "ruff",  # Fast linter (replacement for flake8, newer than pylint)
+    "mypy",  # Type checking
+
     # Testing
-    "pytest",          # Testing framework
-    
+    "pytest", # Testing framework
+
     # Debug/development tools
-    "ipython",         # Better REPL experience
-    "ipykernel",       # For Jupyter notebook support in VS Code
+    "ipython",   # Better REPL experience
+    "ipykernel", # For Jupyter notebook support in VS Code
 ]

@@ -1,6 +1,7 @@
 # src/models/providers.py
 from typing import Protocol, Any, Dict
-from langchain_community.llms import Ollama, OpenAI
+from langchain_ollama import OllamaLLM  # Updated import
+from langchain_community.llms import OpenAI
 from .configs import get_provider_config
 
 class ModelProvider(Protocol):
@@ -10,9 +11,9 @@ class ModelProvider(Protocol):
         ...
 
 class OllamaProvider:
-    def create_model(self, model_name: str, **kwargs) -> Ollama:
+    def create_model(self, model_name: str, **kwargs) -> OllamaLLM:
         config = get_provider_config("ollama")
-        return Ollama(
+        return OllamaLLM(
             model=model_name,
             base_url=config["base_url"],
             **kwargs
