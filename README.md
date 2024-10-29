@@ -82,6 +82,29 @@ Ensure you have `python 3.11` installed.
 2. Configure your providers in `config/providers.yaml`
 3. Ensure your local LLM service (Ollama/LM Studio) is running
 
+## Testing the Setup
+
+1. Sync your Ollama models with the configuration:
+   ```bash
+   python src/utils/sync_models.py
+   ```
+   This will create `config/models_ollama_synced.yaml` with configurations for all your available models.
+
+2. Run the test chat script:
+   ```bash
+   # Test with default model
+   python src/test_chat.py
+
+   # Test with a specific model
+   python src/test_chat.py mistral
+   ```
+
+   The script will:
+   - Load the specified model (or default model if none specified)
+   - Send a test prompt
+   - Enter interactive mode where you can chat with the model
+
+
 ## Development
 
 This template includes several tools for development:
