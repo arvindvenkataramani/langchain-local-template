@@ -96,7 +96,7 @@ Ensure you have `python 3.11` installed.
    python src/test_chat.py
 
    # Test with a specific model
-   python src/test_chat.py mistral
+   python src/test_chat.py llama3.2:latest
    ```
 
    The script will:
