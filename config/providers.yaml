@@ -1,0 +1,14 @@
+# config/providers.yaml
+ollama:
+  type: ollama
+  base_url: http://localhost:11434
+  default_params:
+    temperature: 0.7
+    top_p: 1.0
+
+lmstudio:
+  type: lmstudio
+  base_url: http://localhost:1234/v1
+  default_params:
+    temperature: 0.7
+    max_tokens: 2000

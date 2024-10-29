@@ -1,0 +1,24 @@
+# config/models.yaml
+default_model: llama2
+
+models:
+  llama2:
+    provider: ollama
+    model_name: llama2
+    params:
+      temperature: 0.7
+      top_p: 0.9
+
+  mistral:
+    provider: ollama
+    model_name: mistral
+    params:
+      temperature: 0.8
+      context_length: 4096
+
+  gpt4-local:
+    provider: lmstudio
+    model_name: gpt4
+    params:
+      temperature: 0.7
+      max_tokens: 1000

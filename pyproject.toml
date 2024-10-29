@@ -1,0 +1,30 @@
+[project]
+name = "langchain-local"
+version = "0.1.0"
+description = "Local LLM project using LangChain"
+requires-python = ">=3.9"
+dependencies = [
+    "langchain",
+    "langchain-community",
+    "python-dotenv",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = [
+    # Code completion and intelligence
+    "pylance",          # Better Python language support
+    "python-lsp-server",# Language server for better code navigation
+    
+    # Code quality
+    "black",            # Code formatting
+    "ruff",            # Fast linter (replacement for flake8, newer than pylint)
+    "mypy",            # Type checking
+    
+    # Testing
+    "pytest",          # Testing framework
+    
+    # Debug/development tools
+    "ipython",         # Better REPL experience
+    "ipykernel",       # For Jupyter notebook support in VS Code
+]
