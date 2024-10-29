@@ -6,10 +6,11 @@ A template for building LangChain applications with local LLMs (Ollama, LM Studi
 
 ```
 langchain-local-template/
-├── src/                  # Source code
-│   └── models/          # Model-related code
-├── tests/               # Test files
-├── config/              # Configuration files
+├── env-setup/          # Environment setup scripts
+├── src/                # Source code
+│   └── models/         # Model-related code
+├── tests/              # Test files
+├── config/             # Configuration files
 │   ├── models.yaml     # Model definitions
 │   └── providers.yaml  # Provider settings
 └── data/               # Data directory
@@ -19,20 +20,49 @@ langchain-local-template/
 
 ## Prerequisites
 
-- Python 3.9 or higher
+- Python 3.11
 - Ollama or LM Studio installed and running locally
 - VS Code (recommended for development)
 
 ## Setup
 
-1. Create a new repository using this template
-2. Clone your new repository
-3. Set up a Python virtual environment:
+### Make a copy of this repo
+   ```bash
+   gh repo create your-new-project \
+   --template yourusername/langchain-local-template \
+   --clone
+   ```
+Or, on GitHub:
+* Go to the repository page.
+* Click on the "Use this template" button.
+* Choose Create a new repository.
+* Name your new repository and set it to public or private as desired.
+
+### Automated setup
+First, make the setup scripts executable
+   ```bash
+   chmod +x env-setup/*.sh
+   ```
+Then run the setup script.
+   ```bash
+   ./env-setup/setup-all.sh
+   ```
+
+You can also run the individual setup scripts: 
+   ```bash
+   ./env-setup/setup-python.sh
+   source venv/bin/activate
+   ./env-setup/setup-langchain.sh
+   ```
+
+
+### Manual setup
+1. Set up a Python virtual environment:
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: .\venv\Scripts\activate
    ```
-4. Install dependencies:
+2. Install dependencies:
    ```bash
    # Basic installation
    pip install -r requirements.txt
@@ -88,8 +118,7 @@ pytest tests/
 5. Create a pull request
 
 ## License
-
-[Your chosen license]
+Choose a license when you copy this template.
 
 #### Badges
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
