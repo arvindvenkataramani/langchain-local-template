@@ -6,7 +6,7 @@ source "${SCRIPT_DIR}/format.sh"
 
 print_step "LangChain Setup"
 
-# Check if virtual environment is activated
+# Check virtual environment
 if [[ "$VIRTUAL_ENV" == "" ]]; then
     print_error "Virtual environment is not activated"
     echo "Please run:"
@@ -14,38 +14,42 @@ if [[ "$VIRTUAL_ENV" == "" ]]; then
     exit 1
 fi
 
-print_step "Installing LangChain and Dependencies"
+# Install main project dependencies
+print_step "Installing Main Dependencies"
+echo "Installing from pyproject.toml..."
+pip install -e .
+print_success "Main dependencies installed"
 
-# Install basic requirements
-echo "Installing basic requirements..."
-pip install -r requirements.txt >/dev/null 2>&1
-print_success "Basic requirements installed"
-
-# Check if dev installation is requested
-if [[ "$1" == "--with-dev" ]]; then
-    print_step "Installing Development Dependencies"
-    echo "Installing development packages..."
-    pip install ".[dev]" >/dev/null 2>&1
-    print_success "Development packages installed"
-    
-    # Install pre-commit hooks if .git directory exists
-    if [ -d ".git" ]; then
-        if command -v pre-commit &> /dev/null; then
-            print_step "Setting Up Pre-commit Hooks"
-            pre-commit install
-            print_success "Pre-commit hooks installed"
-        fi
-    fi
+# Verify LangChain installation
+print_step "Verifying LangChain Installation"
+if python -c "import langchain; print(f'LangChain {langchain.__version__} installed successfully')" ; then
+    print_success "LangChain verification passed"
+else
+    print_error "LangChain verification failed"
+    exit 1
 fi
 
-print_step "Verifying Installation"
-python -c "import langchain; print(f'LangChain version: {langchain.__version__}')"
+# Install development dependencies
+print_step "Installing Development Dependencies"
+echo "Installing development packages..."
+pip install -e ".[dev]"
+print_success "Development dependencies installed"
+
+# Verify dev tools
+print_step "Verifying Development Tools"
+if black --version >/dev/null 2>&1 && \
+   ruff --version >/dev/null 2>&1 && \
+   pytest --version >/dev/null 2>&1; then
+    print_success "Development tools verification passed"
+else
+    print_error "Some development tools are missing"
+    exit 1
+fi
 
 print_step "Setup Complete!"
 echo -e "${BOLD}Next steps:${NC}"
 echo "1. Configure your models in config/models.yaml"
-echo "2. Configure your providers in config/providers.yaml"
-echo "3. Start your local LLM service:"
+echo "2. Start your local LLM service:"
 print_command "Ollama: ollama serve"
 print_command "or"
 print_command "LM Studio: Start via application"

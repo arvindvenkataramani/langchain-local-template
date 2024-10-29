@@ -8,7 +8,7 @@ print_step "Starting Complete Setup Process"
 
 # Run Python setup
 print_step "Setting up Python Environment"
-"${SCRIPT_DIR}/setup_python.sh"
+"${SCRIPT_DIR}/setup-python.sh"
 if [ $? -ne 0 ]; then
     print_error "Python setup failed"
     exit 1
@@ -27,9 +27,9 @@ print_success "Virtual environment activated"
 print_step "Installing LangChain"
 if [[ "$1" == "--with-dev" ]]; then
     print_warning "Installing with development dependencies"
-    "${SCRIPT_DIR}/setup_langchain.sh" --with-dev
+    "${SCRIPT_DIR}/setup-langchain.sh" --with-dev
 else
-    "${SCRIPT_DIR}/setup_langchain.sh"
+    "${SCRIPT_DIR}/setup-langchain.sh"
 fi
 if [ $? -ne 0 ]; then
     print_error "LangChain setup failed"
