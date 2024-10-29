@@ -29,7 +29,7 @@ langchain-local-template/
 ### Make a copy of this repo
    ```bash
    gh repo create your-new-project \
-   --template yourusername/langchain-local-template \
+   --template arvindvenkataramani/langchain-local-template \
    --clone
    ```
 Or, on GitHub:
