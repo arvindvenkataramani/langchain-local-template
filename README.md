@@ -57,18 +57,23 @@ You can also run the individual setup scripts:
 
 
 ### Manual setup
+Ensure you have `python 3.11` installed.
+
 1. Set up a Python virtual environment:
    ```bash
-   python -m venv venv
+   python3.11 -m venv venv
    source venv/bin/activate  # On Windows: .\venv\Scripts\activate
    ```
-2. Install dependencies:
+2. Install langchain:
    ```bash
-   # Basic installation
-   pip install -r requirements.txt
+   # Core langchain packages
+   pip install -e . -v
+
+   # verify that this worked
+   python -c "import langchain; print(f'LangChain version: {langchain.__version__}')"
 
    # For development (includes testing and code quality tools)
-   pip install ".[dev]"
+   pip install -e ".[dev]" -v
    ```
 
 ## Configuration
