@@ -163,7 +163,7 @@ pytest tests/
 Choose a license when you copy this template.
 
 #### Badges
-[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/3.11/)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![GPLv3](https://img.shields.io/badge/License-GPLv3-green.svg)](https://opensource.org/licenses/GPLv3)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/yourusername/langchain-local-template/graphs/commit-activity)
 [![Template](https://img.shields.io/badge/GitHub-Template-green?logo=github)](https://github.com/yourusername/langchain-local-template/generate)
