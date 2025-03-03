@@ -1,0 +1,21 @@
+Metadata-Version: 2.2
+Name: langchain-local
+Version: 0.1.0
+Summary: Local LLM project using LangChain
+Requires-Python: >=3.9
+License-File: LICENSE
+Requires-Dist: langchain
+Requires-Dist: langchain-community
+Requires-Dist: langchain-ollama
+Requires-Dist: python-dotenv
+Requires-Dist: pyyaml
+Requires-Dist: requests
+Provides-Extra: dev
+Requires-Dist: pylance; extra == "dev"
+Requires-Dist: python-lsp-server; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ipython; extra == "dev"
+Requires-Dist: ipykernel; extra == "dev"

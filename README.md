@@ -38,22 +38,29 @@ Or, on GitHub:
 * Choose Create a new repository.
 * Name your new repository and set it to public or private as desired.
 
-### Automated setup
-First, make the setup scripts executable
-   ```bash
-   chmod +x env-setup/*.sh
-   ```
-Then run the setup script.
-   ```bash
-   ./env-setup/setup-all.sh
-   ```
+### Automated Setup
+First, make the setup scripts executable:
+```bash
+chmod +x env-setup/*.sh
+```
+Run both scripts to set up Python, Pipenv, and project dependencies:
+```bash
+./env-setup/setup-mac-python.sh
+./env-setup/setup-langchain-project.sh
+```
 
-You can also run the individual setup scripts: 
-   ```bash
-   ./env-setup/setup-python.sh
-   source venv/bin/activate
-   ./env-setup/setup-langchain.sh
-   ```
+#### Individual Setup
+You can also run the scripts individually:
+
+1. Set up Python and Pipenv:
+```bash
+./env-setup/setup-mac-python.sh
+```
+
+2. Set up project dependencies with Pipenv:
+```bash
+./env-setup/setup-langchain-project.sh
+```
 
 
 ### Manual setup
@@ -75,6 +82,12 @@ Ensure you have `python 3.11` installed.
    # For development (includes testing and code quality tools)
    pip install -e ".[dev]" -v
    ```
+
+### Start coding
+You will need to activate the pipenv environment and load package dependencies
+```bash
+pipenv shell
+```
 
 ## Configuration
 
@@ -136,6 +149,7 @@ pytest tests/
 - `tests/`: Test files
 - `env-setup/`: Environment setup scripts
 - `.vscode/`: VS Code configuration
+- `notes/`: a place for project notes
 
 ## Contributing
 
@@ -149,8 +163,8 @@ pytest tests/
 Choose a license when you copy this template.
 
 #### Badges
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/3.11/)
+[![GPLv3](https://img.shields.io/badge/License-GPLv3-green.svg)](https://opensource.org/licenses/GPLv3)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/yourusername/langchain-local-template/graphs/commit-activity)
 [![Template](https://img.shields.io/badge/GitHub-Template-green?logo=github)](https://github.com/yourusername/langchain-local-template/generate)
 [![LangChain](https://img.shields.io/badge/🦜_LangChain-Powered-blue)](https://github.com/langchain-ai/langchain)

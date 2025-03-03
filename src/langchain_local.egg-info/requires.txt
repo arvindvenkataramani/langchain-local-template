@@ -1,0 +1,16 @@
+langchain
+langchain-community
+langchain-ollama
+python-dotenv
+pyyaml
+requests
+
+[dev]
+pylance
+python-lsp-server
+black
+ruff
+mypy
+pytest
+ipython
+ipykernel

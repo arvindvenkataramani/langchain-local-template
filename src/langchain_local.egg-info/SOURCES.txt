@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/langchain_local.egg-info/PKG-INFO
+src/langchain_local.egg-info/SOURCES.txt
+src/langchain_local.egg-info/dependency_links.txt
+src/langchain_local.egg-info/requires.txt
+src/langchain_local.egg-info/top_level.txt
+src/models/configs.py
+src/models/factory.py
+src/models/providers.py
+src/utils/sync_models.py

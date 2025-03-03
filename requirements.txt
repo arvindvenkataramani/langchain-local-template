@@ -1,4 +1,0 @@
-langchain
-langchain-community
-python-dotenv
-pyyaml
