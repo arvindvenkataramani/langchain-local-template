@@ -20,7 +20,7 @@ langchain-local-template/
 
 ## Prerequisites
 
-- Python 3.11
+- Python 3.9+
 - Ollama or LM Studio installed and running locally
 - VS Code (recommended for development)
 
