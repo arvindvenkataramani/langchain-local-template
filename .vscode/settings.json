@@ -17,3 +17,4 @@
     "terminal.integrated.env.osx": {
         "ZDOTDIR": "${workspaceFolder}"
     }
+}
