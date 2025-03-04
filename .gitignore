@@ -19,6 +19,9 @@ env/
 *.swp
 *.swo
 
+# Terminal
+.zsh_history
+
 # OS
 .DS_Store
 Thumbs.db
